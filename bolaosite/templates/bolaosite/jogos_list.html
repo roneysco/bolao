@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Bolão Estaduais</title>
+    </head>
+    <body>
+        <p style="text-align: center;"><strong>BOLÃO ESTADUAIS</strong></p>
+		<p>&nbsp;</p>
+		<p style="text-align: center;">SUAS APOSTAS SEMANA <strong>1</strong></p>
+		<p style="text-align: center;">&nbsp;</p>
+
+		{% for jogo in jogos %}
+			<p style="text-align: center;">{{ jogo.data_hora }} {{ jogo.time1 }} APOSTA APOSTA {{ jogo.time2 }}</p>
+		{% endfor %}
+
+		<table style="height: 50px; width: 800px;" border="1" align="center">
+		<tbody>
+			<tr>
+				<td style="text-align: center;">Data e Horário</td>
+				<td style="text-align: center;">Mandante</td>
+				<td style="text-align: center;">PLACAR</td>
+				<td style="text-align: center;">PLACAR</td>
+				<td style="text-align: center;">Visitante</td>
+				<td style="text-align: center;"><strong>PONTOS</strong></td>
+			</tr>
+			{% for jogo in jogos %}
+			<p style="text-align: center;">{{ jogo.data_hora }} {{ jogo.time1 }} APOSTA APOSTA {{ jogo.time2 }}</p>
+			<tr>
+				<td style="text-align: center;">{{ jogo.data_hora }}</td>
+				<td style="text-align: center;">{{ jogo.time1 }}</td>
+				<td style="text-align: center;">PLACAR</td>
+				<td style="text-align: center;">PLACAR</td>
+				<td style="text-align: center;">{{ jogo.time2 }}</td>
+				<td style="text-align: center;"><strong>PONTOS</strong></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		</table>
+
+		<p style="text-align: center;">&nbsp;</p>
+		<p style="text-align: center;">SALVAR</p>
+		<p><strong>&nbsp;</strong></p>
+
+		<!--{% for jogo in jogos %}
+			<input type="hidden" name="idJogo" id="idJogo" value="{{ idJogo }}" />
+			<form action="#" method="POST" enctype="multipart/form-data">
+					<h2><strong>{{ jogo.time1 }}</strong>
+					<input type="text" style="width:35px;" id="resultadoprimeirotime" name="resultadoprimeirotime" value="" />
+					&nbsp;&nbsp;<strong>-</strong>&nbsp;&nbsp;
+					<input type="text" style="width:35px;" id="resultadosegundotime" name="resultadosegundotime" value="" />
+					<strong>{{ jogo.time2 }}</strong></h2> <button id="btnSubmitAposta" name="btnSubmitAposta" class="cupid-green">Apostar</button>
+			</form>
+		{% endfor %}-->
+
+    </body>
+</html>
